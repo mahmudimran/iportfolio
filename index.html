@@ -7,32 +7,60 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&family=Roboto&display=swap" rel="stylesheet">
 <style>
 body {
-  font-family:'Noto Sans Bengali', Roboto, Arial, sans-serif;
+  font-family: 'Noto Sans Bengali', sans-serif;
   margin:0; padding:0;
   background: #f5f5f5;
   color:#222;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
+
 header {
   display:flex; justify-content:space-between; align-items:center;
-  padding:15px 30px; background:rgba(0,0,0,0.8); color:#fff; position:sticky; top:0; z-index:1000;
+  padding:15px 30px; background:rgba(0,0,0,0.7); color:#fff;
+  position:sticky; top:0; z-index:1000;
 }
 header h1 { font-size:22px; margin:0; }
+
 .toggle-btn {
-  background:#28a745; color:#fff; border:none; padding:8px 16px; border-radius:20px; cursor:pointer;
-  transition: all 0.3s ease;
+  background: #2ecc71; color:#fff; border:none; padding:8px 14px;
+  border-radius:5px; cursor:pointer; font-weight:bold;
+  transition: background 0.3s;
 }
-.toggle-btn:hover { opacity:0.8; }
-.container { max-width:900px; margin:30px auto; padding:20px; }
+.toggle-btn:hover { background:#27ae60; }
+
+.container { max-width:900px; margin:30px auto; padding:20px; position:relative; z-index:1; }
+
 .profile-pic { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; }
+
 .section { text-align:left; margin-bottom:20px; padding:0 10px; }
-.section h2 { color:#28a745; margin-top:0; }
-.section ul { padding-left:20px; }
-.personal-info ul li a { color:#000; text-decoration:none; }
-.personal-info ul li a:hover { text-decoration:underline; }
-footer { text-align:center; padding:15px; background:#28a745; color:#fff; margin-top:40px; border-radius:12px 12px 0 0;}
-.contact-icons a { display:inline-block; margin-right:10px; padding:10px; border-radius:50%; background:#fff; color:#28a745; text-decoration:none; transition:0.3s; }
-.contact-icons a:hover { background:#28a745; color:#fff; transform:scale(1.1); }
+
+.card {
+  background:#fff;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:20px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.card h2 { color:#2ecc71; margin-top:0; text-align:left; }
+.card ul { padding-left:20px; text-align:left; list-style:disc; }
+
+.personal-info { text-align:left; margin-top:20px; padding:15px;}
+.personal-info h2 { color:#2ecc71; margin-bottom:10px; text-align:left; }
+.personal-info ul { list-style:none; padding-left:0; }
+.personal-info li { margin-bottom:5px; }
+
+footer { text-align:center; padding:15px; background:#27ae60; color:#fff; margin-top:40px; border-radius:12px 12px 0 0;}
+footer a { color:#fff; text-decoration:none; }
+
+@media(max-width:768px){
+  .section, .card, .personal-info{text-align:left;padding:10px;}
+}
 </style>
 </head>
 <body>
@@ -45,91 +73,185 @@ footer { text-align:center; padding:15px; background:#28a745; color:#fff; margin
 <div class="container">
   <img src="https://i.ibb.co/8LNx93xF/IMG-1684.jpg" alt="Imran" class="profile-pic">
 
-  <div class="section personal-info">
-    <h2 data-bn="ব্যাক্তিগত তথ্য" data-en="Personal Info">ব্যাক্তিগত তথ্য</h2>
-    <p data-bn="আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।"
-       data-en="I am an enthusiastic, self-motivated, reliable, responsible, and hardworking individual. I am a mature team player and can adapt to challenging situations. I perform well both in a team environment and independently, even under pressure.">
-      আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।
-    </p>
-    <ul>
-      <li data-bn="জন্মদিন: 05 May 1998" data-en="Birthday: 05 May 1998">জন্মদিন: 05 May 1998</li>
-      <li data-bn="ফোন: +39 3348933900" data-en="Phone: +39 3348933900">ফোন: +39 3348933900</li>
-      <li data-bn="শহর: Roma, Italy" data-en="City: Roma, Italy">শহর: Roma, Italy</li>
-      <li data-bn="ইমেইল: miahimran75@gmail.com" data-en="Email: miahimran75@gmail.com">
-        ইমেইল: <a href="mailto:miahimran75@gmail.com">miahimran75@gmail.com</a>
-      </li>
-      <li data-bn="ডিগ্রী: Graduate" data-en="Degree: Graduate">ডিগ্রী: Graduate</li>
+  <div class="personal-info">
+    <h2 id="personalHeading">ব্যাক্তিগত তথ্য</h2>
+    <p id="personalDesc">আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।</p>
+    <ul id="personalList">
+      <li>জন্মদিন: 05 May 1998</li>
+      <li>ফোন: +39 3348933900</li>
+      <li>শহর: Roma, Italy</li>
+      <li>ইমেইল: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
+      <li>ডিগ্রী: Graduate</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="শিক্ষাগত যোগ্যতা" data-en="Education">শিক্ষাগত যোগ্যতা</h2>
-    <ul>
-      <li data-bn="স্নাতক - মির্জাপুর বিশ্ববিদ্যালয় কলেজ (২০১৬-১৭)" data-en="Bachelor - Mirzapur University College (2016-17)">স্নাতক - মির্জাপুর বিশ্ববিদ্যালয় কলেজ (২০১৬-১৭)</li>
-      <li data-bn="ইন্টারমিডিয়েট - সৃষ্টি কলেজ অফ টাংগাইল (২০১৪-১৫)" data-en="Intermediate - Srishti College of Tangail (2014-15)">ইন্টারমিডিয়েট - সৃষ্টি কলেজ অফ টাংগাইল (২০১৪-১৫)</li>
-      <li data-bn="দাখিল - গ্রামনাহালী এ এইচ দাখিল মাদ্রাসা (২০১২-১৩)" data-en="Dakhil - Gramnahali AH Dakhil Madrasa (2012-13)">দাখিল - গ্রামনাহালী এ এইচ দাখিল মাদ্রাসা (২০১২-১৩)</li>
-      <li data-bn="জেডিসি - মাওলানা আকরাম আলী দাখিল মাদ্রাসা (২০১০-১২)" data-en="JDC - Maulana Akram Ali Dakhil Madrasa (2010-12)">জেডিসি - মাওলানা আকরাম আলী দাখিল মাদ্রাসা (২০১০-১২)</li>
+  <div class="card">
+    <h2 id="educationHeading">শিক্ষাগত যোগ্যতা</h2>
+    <ul id="educationList">
+      <li>স্নাতক - মির্জাপুর বিশ্ববিদ্যালয় কলেজ (২০১৬-১৭)</li>
+      <li>ইন্টারমিডিয়েট - সৃষ্টি কলেজ অফ টাংগাইল (২০১৪-১৫)</li>
+      <li>দাখিল - গ্রামনাহালী এ এইচ দাখিল মাদ্রাসা (২০১২-১৩)</li>
+      <li>জেডিসি - মাওলানা আকরাম আলী দাখিল মাদ্রাসা (২০১০-১২)</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="কাজের অভিজ্ঞতা" data-en="Work Experience">কাজের অভিজ্ঞতা</h2>
-    <ul>
-      <li data-bn="ওয়েব ডেভেলপার – Rn-Soft (২০২১-২২)" data-en="Web Developer – Rn-Soft (2021-22)">ওয়েব ডেভেলপার – Rn-Soft (২০২১-২২)</li>
-      <li data-bn="ফ্রন্টএন্ড ডিজাইনার – Fiverr (২০২০-২২)" data-en="Frontend Designer – Fiverr (2020-22)">ফ্রন্টএন্ড ডিজাইনার – Fiverr (২০২০-২২)</li>
-      <li data-bn="ফ্রন্টএন্ড ডিজাইনার – Rn-Soft (২০১৯-২০)" data-en="Frontend Designer – Rn-Soft (2019-20)">ফ্রন্টএন্ড ডিজাইনার – Rn-Soft (২০১৯-২০)</li>
+  <div class="card">
+    <h2 id="experienceHeading">কাজের অভিজ্ঞতা</h2>
+    <ul id="experienceList">
+      <li>ওয়েব ডেভেলপার – Rn-Soft (২০২১-২২)</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Fiverr (২০২০-২২)</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft (২০১৯-২০)</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="প্রকল্পসমূহ" data-en="Projects">প্রকল্পসমূহ</h2>
-    <ul>
-      <li data-bn="পোর্টফোলিও ওয়েবসাইট" data-en="Portfolio Website">পোর্টফোলিও ওয়েবসাইট</li>
-      <li data-bn="ই-কমার্স ওয়েব অ্যাপ" data-en="E-commerce Web App">ই-কমার্স ওয়েব অ্যাপ</li>
-      <li data-bn="ব্লগ সিএমএস" data-en="Blog CMS">ব্লগ সিএমএস</li>
+  <div class="card">
+    <h2 id="projectsHeading">প্রকল্পসমূহ</h2>
+    <ul id="projectsList">
+      <li>পোর্টফোলিও ওয়েবসাইট</li>
+      <li>ই-কমার্স ওয়েব অ্যাপ</li>
+      <li>ব্লগ সিএমএস</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="সার্টিফিকেট" data-en="Certificates">সার্টিফিকেট</h2>
-    <ul>
-      <li data-bn="কমপ্লিট ওয়েব ডেভেলপমেন্ট কোর্স - ওয়েব প্রোগ্রামিং হিরো" data-en="Complete Web Development Course - Web Programming Hero">কমপ্লিট ওয়েব ডেভেলপমেন্ট কোর্স - ওয়েব প্রোগ্রামিং হিরো</li>
-      <li data-bn="ওয়েব ডিজাইন - ইনস্টিটিউট অফ কম্পিউটার টেকনোলজি, টাংগাইল" data-en="Web Design - Institute of Computer Technology, Tangail">ওয়েব ডিজাইন - ইনস্টিটিউট অফ কম্পিউটার টেকনোলজি, টাংগাইল</li>
-      <li data-bn="কম্পিউটার অফিস অ্যাপ্লিকেশন - কারিগরি প্রশিক্ষণ কেন্দ্র টাংগাইল (NTC)" data-en="Computer Office Application - Technical Training Center, Tangail (NTC)">কম্পিউটার অফিস অ্যাপ্লিকেশন - কারিগরি প্রশিক্ষণ কেন্দ্র টাংগাইল (NTC)</li>
+  <div class="card">
+    <h2 id="awardsHeading">অ্যাওয়ার্ডস</h2>
+    <ul id="awardsList">
+      <li>মাঠির পাঠশালা - JICA</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft</li>
+      <li>ওয়েব ডেভেলপমেন্ট - প্রোগ্রামিং হিরো</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="আগ্রহ" data-en="Interests">আগ্রহ</h2>
-    <ul>
-      <li data-bn="ট্রাভেল" data-en="Travel">ট্রাভেল</li>
-      <li data-bn="প্রযুক্তি" data-en="Technology">প্রযুক্তি</li>
-      <li data-bn="বই পড়া" data-en="Reading">বই পড়া</li>
+  <div class="card">
+    <h2 id="certificatesHeading">সার্টিফিকেট</h2>
+    <ul id="certificatesList">
+      <li>কমপ্লিট ওয়েব ডেভেলপমেন্ট কোর্স - ওয়েব প্রোগ্রামিং হিরো</li>
+      <li>ওয়েব ডিজাইন - ইনস্টিটিউট অফ কম্পিউটার টেকনোলজি, টাংগাইল</li>
+      <li>কম্পিউটার অফিস অ্যাপ্লিকেশন - কারিগরি প্রশিক্ষণ কেন্দ্র টাংগাইল (NTC)</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</h2>
-    <div class="contact-icons">
-      <a href="mailto:miahimran75@gmail.com" title="Email">📧</a>
-      <a href="tel:+393348933900" title="Phone">📞</a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">💼</a>
-    </div>
+  <div class="card">
+    <h2 id="hobbiesHeading">আগ্রহ</h2>
+    <ul id="hobbiesList">
+      <li>ট্রাভেল</li>
+      <li>প্রযুক্তি</li>
+      <li>বই পড়া</li>
+    </ul>
   </div>
 </div>
 
 <footer>
-  <p>© 2025 ইমরান | সব অধিকার সংরক্ষিত</p>
+  <p>© 2025 ইমরান | All Rights Reserved</p>
 </footer>
 
 <script>
+// Language toggle
 const toggleBtn = document.getElementById('langToggle');
+let lang = 'bn';
+
 toggleBtn.addEventListener('click', () => {
-  const isEn = toggleBtn.innerText === 'EN';
-  document.querySelectorAll('[data-bn]').forEach(el => {
-    el.innerText = isEn ? el.getAttribute('data-en') : el.getAttribute('data-bn');
-  });
-  toggleBtn.innerText = isEn ? 'BN' : 'EN';
+  if(lang === 'bn') {
+    // switch to English
+    document.getElementById('personalHeading').innerText = 'Personal Info';
+    document.getElementById('personalDesc').innerText = 'I am an enthusiastic, self-motivated, reliable, responsible, and hard-working individual. I am a mature team player and adapt to all challenging situations. I work well in both team and individual environments and can perform under pressure while meeting strict deadlines.';
+    document.getElementById('personalList').innerHTML = `
+      <li>Birthday: 05 May 1998</li>
+      <li>Phone: +39 3348933900</li>
+      <li>City: Roma, Italy</li>
+      <li>Email: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
+      <li>Degree: Graduate</li>
+    `;
+    document.getElementById('educationHeading').innerText = 'Education';
+    document.getElementById('educationList').innerHTML = `
+      <li>Bachelor - Mirzapur University College (2016-17)</li>
+      <li>Intermediate - Srishti College of Tangail (2014-15)</li>
+      <li>Dakhil - Gramnahali A H Dakhil Madrasah (2012-13)</li>
+      <li>JDC - Maulana Akram Ali Dakhil Madrasah (2010-12)</li>
+    `;
+    document.getElementById('experienceHeading').innerText = 'Experience';
+    document.getElementById('experienceList').innerHTML = `
+      <li>Web Developer – Rn-Soft (2021-22)</li>
+      <li>Frontend Designer – Fiverr (2020-22)</li>
+      <li>Frontend Designer – Rn-Soft (2019-20)</li>
+    `;
+    document.getElementById('projectsHeading').innerText = 'Projects';
+    document.getElementById('projectsList').innerHTML = `
+      <li>Portfolio Website</li>
+      <li>E-commerce Web App</li>
+      <li>Blog CMS</li>
+    `;
+    document.getElementById('awardsHeading').innerText = 'Awards';
+    document.getElementById('awardsList').innerHTML = `
+      <li>Mathir Pathshala - JICA</li>
+      <li>Frontend Designer – Rn-Soft</li>
+      <li>Web Development - Programming Hero</li>
+    `;
+    document.getElementById('certificatesHeading').innerText = 'Certificates';
+    document.getElementById('certificatesList').innerHTML = `
+      <li>Complete Web Development Course - Web Programming Hero</li>
+      <li>Web Design - Institute of Computer Technology, Tangail</li>
+      <li>Computer Office Application - Technical Training Center Tangail (NTC)</li>
+    `;
+    document.getElementById('hobbiesHeading').innerText = 'Hobbies';
+    document.getElementById('hobbiesList').innerHTML = `
+      <li>Travel</li>
+      <li>Technology</li>
+      <li>Reading Books</li>
+    `;
+    toggleBtn.innerText = 'BN';
+    lang = 'en';
+  } else {
+    // switch to Bengali
+    document.getElementById('personalHeading').innerText = 'ব্যাক্তিগত তথ্য';
+    document.getElementById('personalDesc').innerText = 'আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।';
+    document.getElementById('personalList').innerHTML = `
+      <li>জন্মদিন: 05 May 1998</li>
+      <li>ফোন: +39 3348933900</li>
+      <li>শহর: Roma, Italy</li>
+      <li>ইমেইল: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
+      <li>ডিগ্রী: Graduate</li>
+    `;
+    document.getElementById('educationHeading').innerText = 'শিক্ষাগত যোগ্যতা';
+    document.getElementById('educationList').innerHTML = `
+      <li>স্নাতক - মির্জাপুর বিশ্ববিদ্যালয় কলেজ (২০১৬-১৭)</li>
+      <li>ইন্টারমিডিয়েট - সৃষ্টি কলেজ অফ টাংগাইল (২০১৪-১৫)</li>
+      <li>দাখিল - গ্রামনাহালী এ এইচ দাখিল মাদ্রাসা (২০১২-১৩)</li>
+      <li>জেডিসি - মাওলানা আকরাম আলী দাখিল মাদ্রাসা (২০১০-১২)</li>
+    `;
+    document.getElementById('experienceHeading').innerText = 'কাজের অভিজ্ঞতা';
+    document.getElementById('experienceList').innerHTML = `
+      <li>ওয়েব ডেভেলপার – Rn-Soft (২০২১-২২)</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Fiverr (২০২০-২২)</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft (২০১৯-২০)</li>
+    `;
+    document.getElementById('projectsHeading').innerText = 'প্রকল্পসমূহ';
+    document.getElementById('projectsList').innerHTML = `
+      <li>পোর্টফোলিও ওয়েবসাইট</li>
+      <li>ই-কমার্স ওয়েব অ্যাপ</li>
+      <li>ব্লগ সিএমএস</li>
+    `;
+    document.getElementById('awardsHeading').innerText = 'অ্যাওয়ার্ডস';
+    document.getElementById('awardsList').innerHTML = `
+      <li>মাঠির পাঠশালা - JICA</li>
+      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft</li>
+      <li>ওয়েব ডেভেলপমেন্ট - প্রোগ্রামিং হিরো</li>
+    `;
+    document.getElementById('certificatesHeading').innerText = 'সার্টিফিকেট';
+    document.getElementById('certificatesList').innerHTML = `
+      <li>কমপ্লিট ওয়েব ডেভেলপমেন্ট কোর্স - ওয়েব প্রোগ্রামিং হিরো</li>
+      <li>ওয়েব ডিজাইন - ইনস্টিটিউট অফ কম্পিউটার টেকনোলজি, টাংগাইল</li>
+      <li>কম্পিউটার অফিস অ্যাপ্লিকেশন - কারিগরি প্রশিক্ষণ কেন্দ্র টাংগাইল (NTC)</li>
+    `;
+    document.getElementById('hobbiesHeading').innerText = 'আগ্রহ';
+    document.getElementById('hobbiesList').innerHTML = `
+      <li>ট্রাভেল</li>
+      <li>প্রযুক্তি</li>
+      <li>বই পড়া</li>
+    `;
+    toggleBtn.innerText = 'EN';
+    lang = 'bn';
+  }
 });
 </script>
 
