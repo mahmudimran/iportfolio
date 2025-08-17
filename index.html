@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imran Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 body {
   font-family: 'Noto Sans Bengali', sans-serif;
@@ -12,7 +12,10 @@ body {
   background: #f5f5f5;
   color:#222;
   scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
 }
+
+body.en { font-family: 'Roboto', sans-serif; }
 
 header {
   display:flex; justify-content:space-between; align-items:center;
@@ -22,15 +25,18 @@ header {
 header h1 { font-size:22px; margin:0; }
 
 .toggle-btn {
-  background: #2ecc71; color:#fff; border:none; padding:8px 14px;
+  background: #27ae60; color:#fff; border:none; padding:8px 14px;
   border-radius:5px; cursor:pointer; font-weight:bold;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
+  margin-left:5px;
 }
-.toggle-btn:hover { background:#27ae60; }
+.toggle-btn:hover { background:#2ecc71; }
 
 .container { max-width:900px; margin:30px auto; padding:20px; position:relative; z-index:1; }
 
-.profile-pic { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; }
+.profile-pic { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 10px; display:block; }
+
+.profile-name { text-align:center; font-size:18px; font-weight:bold; color:#222; margin-bottom:20px; transition: color 0.3s; }
 
 .section { text-align:left; margin-bottom:20px; padding:0 10px; }
 
@@ -40,103 +46,125 @@ header h1 { font-size:22px; margin:0; }
   padding:15px;
   margin-bottom:20px;
   box-shadow:0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
 }
 .card:hover {
   transform: translateY(-5px);
   box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
-.card h2 { color:#2ecc71; margin-top:0; text-align:left; }
+.card h2 { color:#27ae60; margin-top:0; text-align:left; }
 .card ul { padding-left:20px; text-align:left; list-style:disc; }
 
 .personal-info { text-align:left; margin-top:20px; padding:15px;}
-.personal-info h2 { color:#2ecc71; margin-bottom:10px; text-align:left; }
+.personal-info h2 { color:#27ae60; margin-bottom:10px; text-align:left; }
 .personal-info ul { list-style:none; padding-left:0; }
 .personal-info li { margin-bottom:5px; }
 
-footer { text-align:center; padding:15px; background:#27ae60; color:#fff; margin-top:40px; border-radius:12px 12px 0 0;}
+footer { text-align:center; padding:15px; background:#27ae60; color:#fff; margin-top:40px; border-radius:12px 12px 0 0; transition: background 0.3s;}
 footer a { color:#fff; text-decoration:none; }
+
+.dark-mode {
+  background:#121212;
+  color:#f5f5f5;
+}
+.dark-mode .card {
+  background:#1e1e1e;
+  color:#f5f5f5;
+}
+.dark-mode .profile-name {
+  color:#fff;
+}
+.dark-mode footer {
+  background:#27ae60;
+}
+.dark-mode .personal-info a {
+  color:#f5f5f5 !important;
+}
 
 @media(max-width:768px){
   .section, .card, .personal-info{text-align:left;padding:10px;}
 }
 </style>
 </head>
-<body>
+<body class="en">
 
 <header>
   <h1>ইমরান</h1>
-  <button class="toggle-btn" id="langToggle">EN</button>
+  <div>
+    <button class="toggle-btn" id="langToggle">BN</button>
+    <button class="toggle-btn" id="darkToggle">Dark</button>
+  </div>
 </header>
 
 <div class="container">
   <img src="https://i.ibb.co/8LNx93xF/IMG-1684.jpg" alt="Imran" class="profile-pic">
+  <div class="profile-name" id="profileName">Imran Miah - Graduate</div>
 
   <div class="personal-info">
-    <h2 id="personalHeading">ব্যাক্তিগত তথ্য</h2>
-    <p id="personalDesc">আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।</p>
+    <h2 id="personalHeading">Personal Info</h2>
+    <p id="personalDesc">I am an enthusiastic, self-motivated, reliable, responsible, and hard-working individual. I am a mature team player and adapt to all challenging situations. I work well in both team and individual environments and can perform under pressure while meeting strict deadlines.</p>
     <ul id="personalList">
-      <li>জন্মদিন: 05 May 1998</li>
-      <li>ফোন: +39 3348933900</li>
-      <li>শহর: Roma, Italy</li>
-      <li>ইমেইল: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
-      <li>ডিগ্রী: Graduate</li>
+      <li>Birthday: 05 May 1998</li>
+      <li>Phone: +39 3348933900</li>
+      <li>City: Roma, Italy</li>
+      <li>Email: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
+      <li>Degree: Graduate</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="educationHeading">শিক্ষাগত যোগ্যতা</h2>
+    <h2 id="educationHeading">Education</h2>
     <ul id="educationList">
-      <li>স্নাতক - মির্জাপুর বিশ্ববিদ্যালয় কলেজ (২০১৬-১৭)</li>
-      <li>ইন্টারমিডিয়েট - সৃষ্টি কলেজ অফ টাংগাইল (২০১৪-১৫)</li>
-      <li>দাখিল - গ্রামনাহালী এ এইচ দাখিল মাদ্রাসা (২০১২-১৩)</li>
-      <li>জেডিসি - মাওলানা আকরাম আলী দাখিল মাদ্রাসা (২০১০-১২)</li>
+      <li>Bachelor - Mirzapur University College (2016-17)</li>
+      <li>Intermediate - Srishti College of Tangail (2014-15)</li>
+      <li>Dakhil - Gramnahali A H Dakhil Madrasah (2012-13)</li>
+      <li>JDC - Maulana Akram Ali Dakhil Madrasah (2010-12)</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="experienceHeading">কাজের অভিজ্ঞতা</h2>
+    <h2 id="experienceHeading">Experience</h2>
     <ul id="experienceList">
-      <li>ওয়েব ডেভেলপার – Rn-Soft (২০২১-২২)</li>
-      <li>ফ্রন্টএন্ড ডিজাইনার – Fiverr (২০২০-২২)</li>
-      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft (২০১৯-২০)</li>
+      <li>Web Developer – Rn-Soft (2021-22)</li>
+      <li>Frontend Designer – Fiverr (2020-22)</li>
+      <li>Frontend Designer – Rn-Soft (2019-20)</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="projectsHeading">প্রকল্পসমূহ</h2>
+    <h2 id="projectsHeading">Projects</h2>
     <ul id="projectsList">
-      <li>পোর্টফোলিও ওয়েবসাইট</li>
-      <li>ই-কমার্স ওয়েব অ্যাপ</li>
-      <li>ব্লগ সিএমএস</li>
+      <li>Portfolio Website</li>
+      <li>E-commerce Web App</li>
+      <li>Blog CMS</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="awardsHeading">অ্যাওয়ার্ডস</h2>
+    <h2 id="awardsHeading">Awards</h2>
     <ul id="awardsList">
-      <li>মাঠির পাঠশালা - JICA</li>
-      <li>ফ্রন্টএন্ড ডিজাইনার – Rn-Soft</li>
-      <li>ওয়েব ডেভেলপমেন্ট - প্রোগ্রামিং হিরো</li>
+      <li>Mathir Pathshala - JICA</li>
+      <li>Frontend Designer – Rn-Soft</li>
+      <li>Web Development - Programming Hero</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="certificatesHeading">সার্টিফিকেট</h2>
+    <h2 id="certificatesHeading">Certificates</h2>
     <ul id="certificatesList">
-      <li>কমপ্লিট ওয়েব ডেভেলপমেন্ট কোর্স - ওয়েব প্রোগ্রামিং হিরো</li>
-      <li>ওয়েব ডিজাইন - ইনস্টিটিউট অফ কম্পিউটার টেকনোলজি, টাংগাইল</li>
-      <li>কম্পিউটার অফিস অ্যাপ্লিকেশন - কারিগরি প্রশিক্ষণ কেন্দ্র টাংগাইল (NTC)</li>
+      <li>Complete Web Development Course - Web Programming Hero</li>
+      <li>Web Design - Institute of Computer Technology, Tangail</li>
+      <li>Computer Office Application - Technical Training Center Tangail (NTC)</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2 id="hobbiesHeading">আগ্রহ</h2>
+    <h2 id="hobbiesHeading">Hobbies</h2>
     <ul id="hobbiesList">
-      <li>ট্রাভেল</li>
-      <li>প্রযুক্তি</li>
-      <li>বই পড়া</li>
+      <li>Travel</li>
+      <li>Technology</li>
+      <li>Reading Books</li>
     </ul>
   </div>
 </div>
@@ -146,63 +174,25 @@ footer a { color:#fff; text-decoration:none; }
 </footer>
 
 <script>
+// Dark mode toggle
+const darkToggle = document.getElementById('darkToggle');
+let darkMode = false;
+
+darkToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  darkMode = !darkMode;
+  darkToggle.innerText = darkMode ? 'Light' : 'Dark';
+});
+
 // Language toggle
 const toggleBtn = document.getElementById('langToggle');
-let lang = 'bn';
+const profileName = document.getElementById('profileName');
+let lang = 'en';
 
 toggleBtn.addEventListener('click', () => {
-  if(lang === 'bn') {
-    // switch to English
-    document.getElementById('personalHeading').innerText = 'Personal Info';
-    document.getElementById('personalDesc').innerText = 'I am an enthusiastic, self-motivated, reliable, responsible, and hard-working individual. I am a mature team player and adapt to all challenging situations. I work well in both team and individual environments and can perform under pressure while meeting strict deadlines.';
-    document.getElementById('personalList').innerHTML = `
-      <li>Birthday: 05 May 1998</li>
-      <li>Phone: +39 3348933900</li>
-      <li>City: Roma, Italy</li>
-      <li>Email: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
-      <li>Degree: Graduate</li>
-    `;
-    document.getElementById('educationHeading').innerText = 'Education';
-    document.getElementById('educationList').innerHTML = `
-      <li>Bachelor - Mirzapur University College (2016-17)</li>
-      <li>Intermediate - Srishti College of Tangail (2014-15)</li>
-      <li>Dakhil - Gramnahali A H Dakhil Madrasah (2012-13)</li>
-      <li>JDC - Maulana Akram Ali Dakhil Madrasah (2010-12)</li>
-    `;
-    document.getElementById('experienceHeading').innerText = 'Experience';
-    document.getElementById('experienceList').innerHTML = `
-      <li>Web Developer – Rn-Soft (2021-22)</li>
-      <li>Frontend Designer – Fiverr (2020-22)</li>
-      <li>Frontend Designer – Rn-Soft (2019-20)</li>
-    `;
-    document.getElementById('projectsHeading').innerText = 'Projects';
-    document.getElementById('projectsList').innerHTML = `
-      <li>Portfolio Website</li>
-      <li>E-commerce Web App</li>
-      <li>Blog CMS</li>
-    `;
-    document.getElementById('awardsHeading').innerText = 'Awards';
-    document.getElementById('awardsList').innerHTML = `
-      <li>Mathir Pathshala - JICA</li>
-      <li>Frontend Designer – Rn-Soft</li>
-      <li>Web Development - Programming Hero</li>
-    `;
-    document.getElementById('certificatesHeading').innerText = 'Certificates';
-    document.getElementById('certificatesList').innerHTML = `
-      <li>Complete Web Development Course - Web Programming Hero</li>
-      <li>Web Design - Institute of Computer Technology, Tangail</li>
-      <li>Computer Office Application - Technical Training Center Tangail (NTC)</li>
-    `;
-    document.getElementById('hobbiesHeading').innerText = 'Hobbies';
-    document.getElementById('hobbiesList').innerHTML = `
-      <li>Travel</li>
-      <li>Technology</li>
-      <li>Reading Books</li>
-    `;
-    toggleBtn.innerText = 'BN';
-    lang = 'en';
-  } else {
-    // switch to Bengali
+  if(lang === 'en') {
+    document.body.classList.remove('en');
+    profileName.innerText = 'ইমরান মিয়া - স্নাতক';
     document.getElementById('personalHeading').innerText = 'ব্যাক্তিগত তথ্য';
     document.getElementById('personalDesc').innerText = 'আমি একজন উৎসাহী, স্ব-প্রণোদিত, নির্ভরযোগ্য, দায়িত্বশীল এবং কঠোর পরিশ্রমী ব্যক্তি। আমি একজন পরিণত দলগত কর্মী এবং সকল চ্যালেঞ্জিং পরিস্থিতিতে মানিয়ে নিতে পারি। আমি দলীয় পরিবেশে এবং নিজস্ব উদ্যোগে উভয় ক্ষেত্রেই ভালোভাবে কাজ করতে পারি। আমি চাপের মধ্যেও ভালোভাবে কাজ করতে পারি এবং কঠোর সময়সীমা মেনে চলতে পারি।';
     document.getElementById('personalList').innerHTML = `
@@ -251,6 +241,57 @@ toggleBtn.addEventListener('click', () => {
     `;
     toggleBtn.innerText = 'EN';
     lang = 'bn';
+  } else {
+    document.body.classList.add('en');
+    profileName.innerText = 'Imran Miah - Graduate';
+    document.getElementById('personalHeading').innerText = 'Personal Info';
+    document.getElementById('personalDesc').innerText = 'I am an enthusiastic, self-motivated, reliable, responsible, and hard-working individual. I am a mature team player and adapt to all challenging situations. I work well in both team and individual environments and can perform under pressure while meeting strict deadlines.';
+    document.getElementById('personalList').innerHTML = `
+      <li>Birthday: 05 May 1998</li>
+      <li>Phone: +39 3348933900</li>
+      <li>City: Roma, Italy</li>
+      <li>Email: <a href="mailto:miahimran75@gmail.com" style="color:#000; font-weight:bold;">miahimran75@gmail.com</a></li>
+      <li>Degree: Graduate</li>
+    `;
+    document.getElementById('educationHeading').innerText = 'Education';
+    document.getElementById('educationList').innerHTML = `
+      <li>Bachelor - Mirzapur University College (2016-17)</li>
+      <li>Intermediate - Srishti College of Tangail (2014-15)</li>
+      <li>Dakhil - Gramnahali A H Dakhil Madrasah (2012-13)</li>
+      <li>JDC - Maulana Akram Ali Dakhil Madrasah (2010-12)</li>
+    `;
+    document.getElementById('experienceHeading').innerText = 'Experience';
+    document.getElementById('experienceList').innerHTML = `
+      <li>Web Developer – Rn-Soft (2021-22)</li>
+      <li>Frontend Designer – Fiverr (2020-22)</li>
+      <li>Frontend Designer – Rn-Soft (2019-20)</li>
+    `;
+    document.getElementById('projectsHeading').innerText = 'Projects';
+    document.getElementById('projectsList').innerHTML = `
+      <li>Portfolio Website</li>
+      <li>E-commerce Web App</li>
+      <li>Blog CMS</li>
+    `;
+    document.getElementById('awardsHeading').innerText = 'Awards';
+    document.getElementById('awardsList').innerHTML = `
+      <li>Mathir Pathshala - JICA</li>
+      <li>Frontend Designer – Rn-Soft</li>
+      <li>Web Development - Programming Hero</li>
+    `;
+    document.getElementById('certificatesHeading').innerText = 'Certificates';
+    document.getElementById('certificatesList').innerHTML = `
+      <li>Complete Web Development Course - Web Programming Hero</li>
+      <li>Web Design - Institute of Computer Technology, Tangail</li>
+      <li>Computer Office Application - Technical Training Center Tangail (NTC)</li>
+    `;
+    document.getElementById('hobbiesHeading').innerText = 'Hobbies';
+    document.getElementById('hobbiesList').innerHTML = `
+      <li>Travel</li>
+      <li>Technology</li>
+      <li>Reading Books</li>
+    `;
+    toggleBtn.innerText = 'BN';
+    lang = 'en';
   }
 });
 </script>
